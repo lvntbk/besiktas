@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beşiktaş JK — Tanıtım Sitesi</title>
+
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-2: #121212;
+      --text: #f5f5f5;
+      --muted: #cfcfcf;
+      --accent: #ffffff;
+      --card: #1a1a1a;
+      --border: #2a2a2a;
+    }
+
+    /* Açık tema renkleri */
+    .light-mode {
+      --bg: #f5f5f5;
+      --bg-2: #e5e5e5;
+      --text: #111;
+      --muted: #555;
+      --accent: #000;
+      --card: #ffffff;
+      --border: #ccc;
+    }
+
+    body { background: var(--bg); color: var(--text); margin:0; font-family:Arial,sans-serif; }
+    a { color: var(--accent); }
+
+    /* Üst menü */
+    .topbar { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(6px); }
+    .topbar .w3-bar { border-bottom: 1px solid var(--border); background: rgba(10,10,10,0.7); }
+
+    /* Kartlar */
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .card h3 { margin-top: 0; }
+
+    /* Bölüm başlıkları */
+    .section-title { border-left: 4px solid var(--accent); padding-left: 12px; margin-bottom: 16px; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--border); color: var(--muted); padding:16px 0; text-align:center; }
+
+    /* Küçük yardımcılar */
+    .muted { color: var(--muted); }
+    .divider { border-bottom: 1px dashed var(--border); margin: 24px 0; }
+
+    /* Mobil menü */
+    #mobileMenu { display: none; }
+
+    @media (max-width: 600px){
+      #desktopMenu { display:none; }
+      #mobileToggle { display:block; }
+    }
+    @media (min-width: 601px){
+      #mobileToggle { display:none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ÜST MENÜ -->
+  <div class="topbar w3-white w3-opacity-min">
+    <div class="w3-bar w3-black w3-padding-small">
+      <div class="w3-right" id="desktopMenu">
+        <a href="#hakkinda" class="w3-bar-item w3-button">Hakkında</a>
+        <a href="#tarihce" class="w3-bar-item w3-button">Tarihçe</a>
+        <a href="#basarilar" class="w3-bar-item w3-button">Başarılar</a>
+        <a href="#iletisim" class="w3-bar-item w3-button">İletişim</a>
+        <button onclick="toggleTheme()" class="w3-button w3-white w3-hover-black" style="margin-left:10px;">
+          Tema Değiştir
+        </button>
+      </div>
+      <a class="w3-bar-item w3-button w3-right" id="mobileToggle" onclick="toggleMenu()"><i class="fa fa-bars"></i></a>
+    </div>
+
+    <!-- Mobil Menü -->
+    <div id="mobileMenu" class="w3-black w3-padding-small w3-animate-opacity">
+      <a href="#hakkinda" class="w3-bar-item w3-button" onclick="toggleMenu()">Hakkında</a>
+      <a href="#tarihce" class="w3-bar-item w3-button" onclick="toggleMenu()">Tarihçe</a>
+      <a href="#basarilar" class="w3-bar-item w3-button" onclick="toggleMenu()">Başarılar</a>
+      <a href="#iletisim" class="w3-bar-item w3-button" onclick="toggleMenu()">İletişim</a>
+      <button onclick="toggleTheme()" class="w3-button w3-white w3-hover-black" style="margin-top:10px;">
+        Tema Değiştir
+      </button>
+    </div>
+  </div>
+
+  <!-- HAKKINDA -->
+  <section id="hakkinda" class="w3-content w3-padding-32" style="max-width:1100px">
+    <h2 class="section-title">Hakkında</h2>
+    <div class="w3-row-padding">
+      <div class="w3-col m6 w3-margin-bottom">
+        <div class="card w3-padding-large">
+          <h3>Kimdir?</h3>
+          <p class="muted">Beşiktaş, Türkiye'nin en köklü spor kulüplerinden biridir. Siyah-beyaz renkleri ve Kartal sembolüyle özdeşleşmiştir.</p>
+          <p>Futbol başta olmak üzere birçok branşta faaliyet göstermiş, spor kültürüne ve toplumsal değerlere önemli katkılar sunmuştur.</p>
+        </div>
+      </div>
+      <div class="w3-col m6 w3-margin-bottom">
+        <div class="card w3-padding-large">
+          <h3>Değerler</h3>
+          <ul class="w3-ul w3-black w3-small">
+            <li class="w3-padding-16"><i class="fa-regular fa-circle-check w3-margin-right"></i> Mücadele, adalet ve saygı</li>
+            <li class="w3-padding-16"><i class="fa-regular fa-circle-check w3-margin-right"></i> Altyapı ve genç yeteneklere önem</li>
+            <li class="w3-padding-16"><i class="fa-regular fa-circle-check w3-margin-right"></i> Taraftarla omuz omuza</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TARİHÇE -->
+  <section id="tarihce" class="w3-content w3-padding-32" style="max-width:1100px; text-align:center;">
+  <h2 class="section-title">Tarihçe</h2>
+
+  <!-- Başlık ve Görsel -->
+  <h3>Beşiktaş Futbol Kulübü</h3>
+  <div class="w3-margin-top w3-margin-bottom">
+    <img src="images/dolmabahce.jpg" alt="Dolmabahçe" 
+         style="width:100%; max-width:800px; border-radius:12px; object-fit:cover;">
+  </div>
+
+  <div class="card w3-padding-large w3-margin-top">
+    <p>
+      Beşiktaş Jimnastik Kulübü (BJK), 1903 yılında İstanbul’da kurulmuş, Türkiye’nin en köklü spor kulüplerinden biridir.
+      Başlangıçta sadece jimnastik ile ilgilenen kulüp, zamanla futbol başta olmak üzere birçok branşa yönelmiştir.
+      Futbol takımı, siyah-beyaz renkleri ve Kartal sembolü ile özdeşleşmiş, Türk spor tarihinde önemli başarılar elde etmiştir.
+      Süper Lig’de birçok kez şampiyon olmuş, Türkiye Kupası ve Süper Kupa’da da zaferler kazanmıştır.
+      Kulüp, altyapıya verdiği önem, taraftarıyla kurduğu güçlü bağ ve toplumsal katkıları ile sportif ve kültürel bir sembol haline gelmiştir.
+    </p>
+  </div>
+</section>
+
+    </div>
+
+    <div class="w3-row-padding">
+      <div class="w3-col m12">
+        <div class="card w3-padding-large">
+          <ul class="w3-ul w3-hoverable">
+            <li class="w3-padding-16"><strong>1903</strong> — Kulübün kuruluş yılı.</li>
+            <li class="w3-padding-16"><strong>—</strong> — İlk şampiyonluk, unutulmaz derbiler.</li>
+            <li class="w3-padding-16"><strong>—</strong> — İnönü / Vodafone Park dönemi ve modernleşme.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAŞARILAR -->
+  <section id="basarilar" class="w3-content w3-padding-32" style="max-width:1100px">
+    <h2 class="section-title">Başarılar</h2>
+    <div class="w3-row-padding">
+      <div class="w3-col m6 w3-margin-bottom">
+        <div class="card w3-padding-24 w3-center">
+          <i class="fa-solid fa-trophy w3-xxlarge"></i>
+          <h3>Süper Lig</h3>
+          <p class="muted">Şampiyonluk sayısı: 16</p>
+        </div>
+      </div>
+      <div class="w3-col m6 w3-margin-bottom">
+        <div class="card w3-padding-24 w3-center">
+          <i class="fa-solid fa-trophy w3-xxlarge"></i>
+          <h3>Türkiye Kupası</h3>
+          <p class="muted">Şampiyonluk sayısı: 11</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- İLETİŞİM -->
+  <section id="iletisim" class="w3-content w3-padding-32" style="max-width:1100px">
+    <h2 class="section-title">İletişim</h2>
+    <div class="w3-row-padding">
+      <div class="w3-col m6 w3-margin-bottom">
+        <div class="card w3-padding-large">
+          <h3>Bize Ulaşın</h3>
+          <p class="muted">Bu form örnektir.</p>
+          <form class="w3-container" onsubmit="event.preventDefault(); alert('Mesajınız için teşekkürler! (Demo)');">
+            <p><label>Ad Soyad</label>
+            <input class="w3-input w3-black w3-border" type="text" required></p>
+            <p><label>E‑posta</label>
+            <input class="w3-input w3-black w3-border" type="email" required></p>
+            <p><label>Mesaj</label>
+            <textarea class="w3-input w3-black w3-border" required></textarea></p>
+            <p><button class="w3-button w3-white w3-hover-black">Gönder</button></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="w3-content w3-padding-16 w3-center">
+    <p class="muted">&copy; 2025 Beşiktaş Jimnastik Kulübü — Tanıtım Sitesi</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      var x = document.getElementById("mobileMenu");
+      if(x.style.display === "block") { x.style.display="none"; }
+      else { x.style.display="block"; }
+    }
+
+    function toggleTheme() {
+      document.documentElement.classList.toggle('light-mode');
+    }
+  </script>
+
+</body>
+</html>
